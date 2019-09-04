@@ -22,6 +22,7 @@ class CPanelAPI {
         $this->token = $token;
     }
 
+    /* Subdomains */
     public function addSubDomain($subdomain, $rootdomain, $dir) 
     {
         $module = "SubDomain";
@@ -52,6 +53,36 @@ class CPanelAPI {
         $function = "listsubdomains";
         $parameters = array(
             'return_https_redirect_status'  => 0
+        );
+        return $this->call($module, $function, $parameters);
+    }
+
+    /* Databases */
+    public function addDb($db) 
+    {
+        $module = "MysqlFE";
+        $function = "createdb";
+        $parameters = array(
+            'db'    => $db
+        );
+        return $this->call($module, $function, $parameters);
+    }
+
+    public function listDbs() 
+    {
+        $module = "MysqlFE";
+        $function = "listdbs";
+        $parameters = array(
+        );
+        return $this->call($module, $function, $parameters);
+    }
+
+    public function delDb($db) 
+    {
+        $module = "MysqlFE";
+        $function = "deletedb";
+        $parameters = array(
+            'db'    => $db
         );
         return $this->call($module, $function, $parameters);
     }
