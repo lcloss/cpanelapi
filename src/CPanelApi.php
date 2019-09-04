@@ -1,5 +1,10 @@
 <?php
-
+/**
+ * CPanelApi -dev
+ *
+ * This will work with cPanel API 2.0
+ */
+ 
 namespace LCloss\CPanelApi;
 
 class CPanelAPI {
