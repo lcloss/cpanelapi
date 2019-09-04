@@ -1,6 +1,7 @@
 {
     "name": "lcloss/cpanelapi",
     "description": "CPanel API2.0",
+    "type": "library",
     "license": "MIT",
     "authors": [
         {
