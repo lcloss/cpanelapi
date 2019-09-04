@@ -2,6 +2,7 @@
 /**
  * CPanelApi -dev
  *
+ * @author: Luciano Closs
  * This will work with cPanel API 2.0
  */
  
