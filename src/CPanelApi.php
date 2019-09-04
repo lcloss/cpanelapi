@@ -89,18 +89,15 @@ class CPanelAPI {
         curl_close($curl);
         
         if ($err) {
-          return array(
-              'cpanelresult'  => 
-                    array(
-                        'postevent' =>
-                            array(
-                                'result'    => 0,
-                            ),
-                        'data' => $err,
-                    ),
-          );
+            return array(
+                'status'    => 'error',
+                'data'      => $err
+            );
         } else {
-          return json_decode( $response );
+            return array(
+                'status'    => 'success',
+                'data'      => $response
+            );
         }
     }
 }
