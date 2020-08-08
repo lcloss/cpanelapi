@@ -87,6 +87,48 @@ class CPanelAPI {
         return $this->call($module, $function, $parameters);
     }
 
+    public function addUserDb($dbuser, $dbpassw)
+    {
+        $module = "MysqlFE";
+        $function = "createdbuser";
+        $parameters = array(
+            'dbuser'    => $dbuser,
+            'password'  => $dbpassw
+        );
+        return $this->call($module, $function, $parameters);
+    }
+
+    public function listUsersDb()
+    {
+        $module = "MysqlFE";
+        $function = "listusers";
+        $parameters = array(
+        );
+        return $this->call($module, $function, $parameters);
+    }
+    
+    public function delUserDb($dbuser)
+    {
+        $module = "MysqlFE";
+        $function = "deletedbuser";
+        $parameters = array(
+            'dbuser'    => $dbuser
+        );
+        return $this->call($module, $function, $parameters);
+    }
+
+    public function setUserDbPrivileges($db, $dbuser, $privileges = 'ALL PRIVILEGES') 
+    {
+        $module = "MysqlFE";
+        $function = "setdbuserprivileges";
+        $parameters = array(
+            'privileges'    => $privileges,
+            'db'            => $db,
+            'dbuser'        => $dbuser
+        );
+        return $this->call($module, $function, $parameters);
+    }
+
     public function call($module, $function, $args = array())
     {
         $parameters = '';
